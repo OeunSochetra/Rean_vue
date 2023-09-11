@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  background-color: antiquewhite;
+  
+}
+
+
+button {
+  text-decoration: none;
+  position: relative;
+  border: none;
+  font-size: 14px;
+  font-family: inherit;
+  color: #fff;
+  width: 180px;
+  height: 40px;
+  line-height: 2em;
+  text-align: center;
+  background: #fb923c;
+  background-size: 300%;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+button:hover {
+  animation: ani 8s linear infinite;
+  border: none;
+}
+
+@keyframes ani {
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 400%;
+  }
+}
+
+button:before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+  background: #fb923c;
+  background-size: 400%;
+  border-radius: 7px;
+  transition: 1s;
+}
+
+button:hover::before {
+  filter: blur(2px);
+}
+
+button:active {
+  background: #be8f68;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #f77171;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 
+
